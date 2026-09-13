@@ -1,0 +1,91 @@
+# NETRA v3 — Jetson Orin Nano Configuration
+# Native CUDA Pipeline: llama.cpp + FAISS GPU + faster-whisper + Piper
+
+server:
+  host: "0.0.0.0"
+  port: 5050
+  workers: 1
+
+llm:
+  model_path: "models/qwen2.5-3b-q4_k_m.gguf"
+  n_gpu_layers: -1    # all layers on GPU
+  n_ctx: 2048          # context window
+  n_batch: 512         # batch size for prompt eval
+  max_tokens: 256
+  temperature: 0.3
+  top_p: 0.9
+
+embedding:
+  model: "BAAI/bge-small-en-v1.5"
+  device: "cuda"
+  dimension: 384
+
+retrieval:
+  top_k: 2
+  min_score: 0.30
+  max_context_chars: 1000
+
+asr:
+  model: "small"
+  device: "cuda"
+  compute_type: "int8"
+  beam_size: 1
+  vad_filter: true
+
+tts:
+  voice_dir: "models/piper"
+  default_voice: "hi"
+  voices:
+    hi:
+      model: "hi_IN-medium.onnx"
+      config: "hi_IN-medium.onnx.json"
+    en:
+      model: "en_US-lessac-medium.onnx"
+      config: "en_US-lessac-medium.onnx.json"
+
+ocr:
+  languages: ["hi", "en"]
+  gpu: true
+
+knowledge_base:
+  policies_dir: "knowledge_base/policies"
+  vector_store_dir: "knowledge_base/vector_store"
+  auto_ingest: true
+
+prompts:
+  scheme_qa:
+    system: |
+      You are NETRA, a government scheme assistant. RESPOND ONLY IN {language}.
+      If {language} is Hindi, use Devanagari script.
+      STRICT RULES:
+      1. Answer ONLY using the Context provided. NEVER invent facts.
+      2. Copy numbers, amounts, dates EXACTLY as written in context.
+      3. If context does not contain the answer, say "यह जानकारी मेरे पास उपलब्ध नहीं है".
+      4. Keep answer 3-5 sentences. Use simple everyday language.
+    user: |
+      Context (ONLY source of truth):
+      {context}
+      Question: {question}
+      Answer ONLY from the context above. Respond in {language}:
+
+  pdf_qa:
+    system: |
+      You are NETRA, a document analyst. RESPOND ONLY IN {language}.
+      RULES: Use ONLY the document content provided. Be precise with numbers and facts.
+      Keep answer 3-5 sentences.
+    user: |
+      Document Content:
+      {context}
+      Question: {question}
+      Answer from the document. Respond in {language}:
+
+  image_qa:
+    system: |
+      You are NETRA, an image content analyst. RESPOND ONLY IN {language}.
+      Describe what you see in the extracted text/content from the image.
+      Be factual and precise.
+    user: |
+      Image Content:
+      {context}
+      Question: {question}
+      Answer based on the image content. Respond in {language}:

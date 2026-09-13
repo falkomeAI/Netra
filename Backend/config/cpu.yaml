@@ -1,0 +1,18 @@
+device:
+  target: "cpu"
+  vram_budget_mb: 32768
+  vram_reserved_mb: 4096
+  cuda_device: -1
+  enable_tensorrt: false
+
+defaults:
+  preprocessing: "opencv"
+  ocr: "easyocr"
+  embedding: "ollama"
+  retrieval: "ollama"
+  asr: "whisper_small"
+  llm: "ollama_qwen3_4b"
+  nmt: "ollama_nmt"
+  tts: "piper"
+  vlm: "ollama_vlm"
+  knowledge_graph: "networkx"

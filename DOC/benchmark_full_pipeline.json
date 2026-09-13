@@ -1,0 +1,510 @@
+{
+  "generated_at": "2026-08-15T13:39:04.343984+00:00",
+  "mode": "api",
+  "runs_per_test": 2,
+  "system": {
+    "platform": "Linux",
+    "architecture": "aarch64",
+    "cuda_available": false,
+    "cuda_version": null,
+    "gpu_name": null,
+    "gpu_memory_total_mb": 0,
+    "gpu_memory_free_mb": 0,
+    "is_jetson": true,
+    "jetson_model": "NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super",
+    "cpu_count": 6,
+    "ram_total_mb": 7619.8,
+    "baseline": {
+      "timestamp": 1786801144.7121916,
+      "cpu_util_pct": null,
+      "cpu_temp_c": 49.5,
+      "ram_used_mb": 3445.3,
+      "ram_total_mb": 7619.8,
+      "gpu_util_pct": 51.6,
+      "gpu_temp_c": 49.8,
+      "gpu_mem_used_mb": null,
+      "gpu_mem_total_mb": null
+    }
+  },
+  "benchmarks": {
+    "full_pipeline": {
+      "runs": [
+        {
+          "operation": "full_pipeline",
+          "wall_ms": 161699.1,
+          "ingest_ms": 11471.6,
+          "query_ms": 61263.7,
+          "speaker_wait_ms": 78448.9,
+          "prompt_used": "scheme_qa",
+          "rag_hits": 5,
+          "rag_top_score": 0.795091986656189,
+          "played_on_speaker": true,
+          "success": true,
+          "ingest_stages": {
+            "embedding": {
+              "success": true,
+              "latency_ms": 5444.8
+            },
+            "knowledge_graph": {
+              "success": true,
+              "latency_ms": 14.0
+            }
+          },
+          "stages": {
+            "llm": {
+              "success": true,
+              "latency_ms": 51321.5
+            },
+            "ocr": {
+              "success": true,
+              "latency_ms": 0.0
+            },
+            "tts": {
+              "success": true,
+              "latency_ms": 9339.8
+            }
+          },
+          "hardware": {
+            "cpu_util_pct": {
+              "min": 4.5,
+              "max": 76.0,
+              "avg": 32.8,
+              "samples": 360
+            },
+            "cpu_temp_c": {
+              "min": 49.4,
+              "max": 53.2,
+              "avg": 50.8,
+              "samples": 360
+            },
+            "ram_used_mb": {
+              "min": 3450.1,
+              "max": 6125.1,
+              "avg": 5684.5,
+              "samples": 360
+            },
+            "gpu_util_pct": {
+              "min": 0.0,
+              "max": 99.5,
+              "avg": 49.1,
+              "samples": 360
+            },
+            "gpu_temp_c": {
+              "min": 49.8,
+              "max": 55.2,
+              "avg": 51.3,
+              "samples": 360
+            },
+            "gpu_mem_used_mb": {
+              "min": null,
+              "max": null,
+              "avg": null,
+              "samples": 0
+            },
+            "sample_count": 360
+          },
+          "model_placement": {
+            "stages": {
+              "platform": {
+                "jetson": "True",
+                "jetson_model": "NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super",
+                "torch_cuda": "False",
+                "ctranslate2_cuda": "False",
+                "paddle_cuda": "False"
+              },
+              "llm": {
+                "device": "gpu",
+                "backend": "ollama",
+                "models": "qwen2.5:3b",
+                "note": "qwen2.5:3b on GPU"
+              },
+              "nmt": {
+                "device": "gpu",
+                "backend": "ollama",
+                "models": "qwen2.5:3b",
+                "note": "qwen2.5:3b on GPU"
+              },
+              "retrieval": {
+                "device": "gpu",
+                "backend": "ollama",
+                "models": "qwen2.5:3b",
+                "note": "qwen2.5:3b on GPU"
+              },
+              "embedding": {
+                "device": "gpu",
+                "backend": "ollama",
+                "models": "qwen2.5:3b",
+                "note": "qwen2.5:3b on GPU"
+              },
+              "asr": {
+                "device": "cpu",
+                "backend": "faster-whisper",
+                "compute_type": "int8",
+                "note": "Whisper ASR"
+              },
+              "ocr": {
+                "device": "cpu",
+                "backend": "paddleocr",
+                "note": "PaddleOCR"
+              },
+              "tts": {
+                "device": "cpu",
+                "backend": "edge-tts/piper",
+                "note": "TTS synthesis + ALSA aplay to USB speaker"
+              },
+              "preprocessing": {
+                "device": "cpu",
+                "backend": "opencv",
+                "note": "Image cleanup"
+              },
+              "faiss": {
+                "device": "cpu",
+                "backend": "faiss-cpu",
+                "note": "Vector index search"
+              },
+              "speaker": {
+                "device": "cpu",
+                "backend": "alsa-aplay",
+                "note": "USB speaker playback"
+              }
+            },
+            "ollama_loaded": [
+              {
+                "name": "qwen2.5:3b",
+                "device": "gpu",
+                "size_mb": 1985.3,
+                "vram_mb": 1985.3,
+                "note": "Ollama 1.9 GB in VRAM"
+              }
+            ]
+          },
+          "answer_preview": "1) PM-KISAN is a central government scheme that provides income support of Rs 6,000 per year to all landholding farmer families across India.\n\n2) The benefit amount is Rs 6,000 per year, paid in three equal installments of Rs 2,000 each dir"
+        },
+        {
+          "operation": "full_pipeline",
+          "wall_ms": 133593.2,
+          "ingest_ms": 6867.2,
+          "query_ms": 54229.9,
+          "speaker_wait_ms": 66814.5,
+          "prompt_used": "scheme_qa",
+          "rag_hits": 5,
+          "rag_top_score": 0.8062273859977722,
+          "played_on_speaker": true,
+          "success": true,
+          "ingest_stages": {
+            "embedding": {
+              "success": true,
+              "latency_ms": 6855.4
+            },
+            "knowledge_graph": {
+              "success": true,
+              "latency_ms": 11.6
+            }
+          },
+          "stages": {
+            "llm": {
+              "success": true,
+              "latency_ms": 47695.6
+            },
+            "ocr": {
+              "success": true,
+              "latency_ms": 0.0
+            },
+            "tts": {
+              "success": true,
+              "latency_ms": 6534.1
+            }
+          },
+          "hardware": {
+            "cpu_util_pct": {
+              "min": 16.7,
+              "max": 83.1,
+              "avg": 36.7,
+              "samples": 303
+            },
+            "cpu_temp_c": {
+              "min": 50.2,
+              "max": 53.1,
+              "avg": 51.2,
+              "samples": 303
+            },
+            "ram_used_mb": {
+              "min": 3564.7,
+              "max": 6301.4,
+              "avg": 5885.5,
+              "samples": 303
+            },
+            "gpu_util_pct": {
+              "min": 7.7,
+              "max": 99.4,
+              "avg": 58.9,
+              "samples": 303
+            },
+            "gpu_temp_c": {
+              "min": 50.4,
+              "max": 55.1,
+              "avg": 51.7,
+              "samples": 303
+            },
+            "gpu_mem_used_mb": {
+              "min": null,
+              "max": null,
+              "avg": null,
+              "samples": 0
+            },
+            "sample_count": 303
+          },
+          "model_placement": {
+            "stages": {
+              "platform": {
+                "jetson": "True",
+                "jetson_model": "NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super",
+                "torch_cuda": "False",
+                "ctranslate2_cuda": "False",
+                "paddle_cuda": "False"
+              },
+              "llm": {
+                "device": "gpu",
+                "backend": "ollama",
+                "models": "qwen2.5:3b",
+                "note": "qwen2.5:3b on GPU"
+              },
+              "nmt": {
+                "device": "gpu",
+                "backend": "ollama",
+                "models": "qwen2.5:3b",
+                "note": "qwen2.5:3b on GPU"
+              },
+              "retrieval": {
+                "device": "gpu",
+                "backend": "ollama",
+                "models": "qwen2.5:3b",
+                "note": "qwen2.5:3b on GPU"
+              },
+              "embedding": {
+                "device": "gpu",
+                "backend": "ollama",
+                "models": "qwen2.5:3b",
+                "note": "qwen2.5:3b on GPU"
+              },
+              "asr": {
+                "device": "cpu",
+                "backend": "faster-whisper",
+                "compute_type": "int8",
+                "note": "Whisper ASR"
+              },
+              "ocr": {
+                "device": "cpu",
+                "backend": "paddleocr",
+                "note": "PaddleOCR"
+              },
+              "tts": {
+                "device": "cpu",
+                "backend": "edge-tts/piper",
+                "note": "TTS synthesis + ALSA aplay to USB speaker"
+              },
+              "preprocessing": {
+                "device": "cpu",
+                "backend": "opencv",
+                "note": "Image cleanup"
+              },
+              "faiss": {
+                "device": "cpu",
+                "backend": "faiss-cpu",
+                "note": "Vector index search"
+              },
+              "speaker": {
+                "device": "cpu",
+                "backend": "alsa-aplay",
+                "note": "USB speaker playback"
+              }
+            },
+            "ollama_loaded": [
+              {
+                "name": "qwen2.5:3b",
+                "device": "gpu",
+                "size_mb": 1985.3,
+                "vram_mb": 1985.3,
+                "note": "Ollama 1.9 GB in VRAM"
+              }
+            ]
+          },
+          "answer_preview": "What the scheme is: PM-KISAN Yojana provides income support to farmers.\n\nBenefit amount (exact figure from context): Rs 6000 per year.\n\nWho is eligible / not eligible: All landholding farmer families with cultivable land are eligible. Small"
+        }
+      ],
+      "summary": {
+        "wall_ms": {
+          "min": 133593.2,
+          "max": 161699.1,
+          "avg": 147646.2,
+          "p50": 161699.1,
+          "p95": 161699.1,
+          "count": 2
+        },
+        "ingest_ms": {
+          "min": 6867.2,
+          "max": 11471.6,
+          "avg": 9169.4,
+          "p50": 11471.6,
+          "p95": 11471.6,
+          "count": 2
+        },
+        "query_ms": {
+          "min": 54229.9,
+          "max": 61263.7,
+          "avg": 57746.8,
+          "p50": 61263.7,
+          "p95": 61263.7,
+          "count": 2
+        },
+        "speaker_wait_ms": {
+          "min": 66814.5,
+          "max": 78448.9,
+          "avg": 72631.7,
+          "p50": 78448.9,
+          "p95": 78448.9,
+          "count": 2
+        },
+        "stages": {
+          "llm": {
+            "min": 47695.6,
+            "max": 51321.5,
+            "avg": 49508.6,
+            "p50": 51321.5,
+            "p95": 51321.5,
+            "count": 2
+          },
+          "ocr": {
+            "min": 0.0,
+            "max": 0.0,
+            "avg": 0.0,
+            "p50": 0.0,
+            "p95": 0.0,
+            "count": 2
+          },
+          "tts": {
+            "min": 6534.1,
+            "max": 9339.8,
+            "avg": 7936.9,
+            "p50": 9339.8,
+            "p95": 9339.8,
+            "count": 2
+          }
+        },
+        "hardware": {
+          "cpu_util_pct": {
+            "min": 32.8,
+            "max": 36.7,
+            "avg": 34.8,
+            "samples": 2
+          },
+          "cpu_temp_c": {
+            "min": 50.8,
+            "max": 51.2,
+            "avg": 51.0,
+            "samples": 2
+          },
+          "ram_used_mb": {
+            "min": 5684.5,
+            "max": 5885.5,
+            "avg": 5785.0,
+            "samples": 2
+          },
+          "gpu_util_pct": {
+            "min": 49.1,
+            "max": 58.9,
+            "avg": 54.0,
+            "samples": 2
+          },
+          "gpu_temp_c": {
+            "min": 51.3,
+            "max": 51.7,
+            "avg": 51.5,
+            "samples": 2
+          },
+          "gpu_mem_used_mb": {
+            "min": null,
+            "max": null,
+            "avg": null,
+            "samples": 0
+          }
+        }
+      }
+    }
+  },
+  "model_placement": {
+    "stages": {
+      "platform": {
+        "jetson": "True",
+        "jetson_model": "NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super",
+        "torch_cuda": "False",
+        "ctranslate2_cuda": "False",
+        "paddle_cuda": "False"
+      },
+      "llm": {
+        "device": "gpu",
+        "backend": "ollama",
+        "models": "qwen2.5:3b",
+        "note": "qwen2.5:3b on GPU"
+      },
+      "nmt": {
+        "device": "gpu",
+        "backend": "ollama",
+        "models": "qwen2.5:3b",
+        "note": "qwen2.5:3b on GPU"
+      },
+      "retrieval": {
+        "device": "gpu",
+        "backend": "ollama",
+        "models": "qwen2.5:3b",
+        "note": "qwen2.5:3b on GPU"
+      },
+      "embedding": {
+        "device": "gpu",
+        "backend": "ollama",
+        "models": "qwen2.5:3b",
+        "note": "qwen2.5:3b on GPU"
+      },
+      "asr": {
+        "device": "cpu",
+        "backend": "faster-whisper",
+        "compute_type": "int8",
+        "note": "Whisper ASR"
+      },
+      "ocr": {
+        "device": "cpu",
+        "backend": "paddleocr",
+        "note": "PaddleOCR"
+      },
+      "tts": {
+        "device": "cpu",
+        "backend": "edge-tts/piper",
+        "note": "TTS synthesis + ALSA aplay to USB speaker"
+      },
+      "preprocessing": {
+        "device": "cpu",
+        "backend": "opencv",
+        "note": "Image cleanup"
+      },
+      "faiss": {
+        "device": "cpu",
+        "backend": "faiss-cpu",
+        "note": "Vector index search"
+      },
+      "speaker": {
+        "device": "cpu",
+        "backend": "alsa-aplay",
+        "note": "USB speaker playback"
+      }
+    },
+    "ollama_loaded": [
+      {
+        "name": "qwen2.5:3b",
+        "device": "gpu",
+        "size_mb": 1985.3,
+        "vram_mb": 1985.3,
+        "note": "Ollama 1.9 GB in VRAM"
+      }
+    ]
+  }
+}

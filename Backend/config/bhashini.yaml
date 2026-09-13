@@ -1,0 +1,37 @@
+bhashini:
+  pipeline_id: "64392f96daac500b55c543cd"
+  metering_url: "https://metering.ulcacontrib.org"
+
+  mode: "offline"  # "online" | "offline" | "hybrid"
+  # offline = all inference runs locally, no network calls
+
+  languages:
+    scheduled_22:
+      - {code: "hi", name: "Hindi", script: "Devanagari"}
+      - {code: "bn", name: "Bengali", script: "Bengali"}
+      - {code: "te", name: "Telugu", script: "Telugu"}
+      - {code: "mr", name: "Marathi", script: "Devanagari"}
+      - {code: "ta", name: "Tamil", script: "Tamil"}
+      - {code: "gu", name: "Gujarati", script: "Gujarati"}
+      - {code: "ur", name: "Urdu", script: "Arabic"}
+      - {code: "kn", name: "Kannada", script: "Kannada"}
+      - {code: "or", name: "Odia", script: "Odia"}
+      - {code: "ml", name: "Malayalam", script: "Malayalam"}
+      - {code: "pa", name: "Punjabi", script: "Gurmukhi"}
+      - {code: "as", name: "Assamese", script: "Bengali"}
+      - {code: "mai", name: "Maithili", script: "Devanagari"}
+      - {code: "sa", name: "Sanskrit", script: "Devanagari"}
+      - {code: "kok", name: "Konkani", script: "Devanagari"}
+      - {code: "ne", name: "Nepali", script: "Devanagari"}
+      - {code: "sd", name: "Sindhi", script: "Arabic"}
+      - {code: "doi", name: "Dogri", script: "Devanagari"}
+      - {code: "mni", name: "Manipuri", script: "Bengali"}
+      - {code: "brx", name: "Bodo", script: "Devanagari"}
+      - {code: "sat", name: "Santali", script: "Ol Chiki"}
+      - {code: "ks", name: "Kashmiri", script: "Arabic"}
+      - {code: "en", name: "English", script: "Latin"}
+
+  offline_fallback:
+    asr: "whisper_small"
+    nmt: "nllb_600m"
+    tts: "edge_tts"
