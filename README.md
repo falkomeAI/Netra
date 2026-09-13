@@ -146,7 +146,7 @@ inference:
 
 ```bash
 # 1. Clone
-git clone https://github.com/Gaurav14cs17/NETRA-v2.git
+git clone https://github.com/falkomeAI/Netra
 cd NETRA-v2
 
 # 2. Backend
