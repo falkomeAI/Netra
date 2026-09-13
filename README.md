@@ -147,8 +147,8 @@ inference:
 
 ```bash
 # 1. Clone
-git clone https://github.com/Gaurav14cs17/NETRA-v2.git
-cd NETRA-v2
+git clone https://github.com/falkomeAI/Netra/tree/cpp
+cd Netra
 
 # 2. Backend
 cd Backend
@@ -183,8 +183,8 @@ node server.js                      # starts on port 3000
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/Gaurav14cs17/NETRA-v2.git
-cd NETRA-v2
+git clone https://github.com/falkomeAI/Netra/tree/cpp
+cd Netra
 ```
 
 ### Step 2: Set Up the Backend
@@ -1128,8 +1128,6 @@ bash scripts/setup_jetson.sh     # clone deps, download models, build
 
 | Resource | URL |
 |---|---|
-| **NETRA v2 GitHub** | [github.com/Gaurav14cs17/NETRA-v2](https://github.com/Gaurav14cs17/NETRA-v2) |
-| **NETRA v3 (C++ Branch)** | [github.com/Gaurav14cs17/NETRA-v2/tree/netra-v3-cpp-jetson](https://github.com/Gaurav14cs17/NETRA-v2/tree/netra-v3-cpp-jetson) |
 | **VYOMA Innovation Challenge** | [bhashini.gov.in/sahyogi/hackathon/open-handheld-ai](https://bhashini.gov.in/sahyogi/hackathon/open-handheld-ai) |
 | **VYOMA Round 1 Results (Shortlisted)** | [bhashini.gov.in/.../shortlisted](https://bhashini.gov.in/sahyogi/hackathon/open-handheld-ai/shortlisted) |
 | **Bhashini API (MeitY)** | [bhashini.gov.in](https://bhashini.gov.in) |
