@@ -1,0 +1,17 @@
+{
+  "name": "netra-ui",
+  "version": "2.1.0",
+  "description": "NETRA v2 — Frontend UI for Suno Sutra Document Pipeline",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "multer": "^1.4.5-lts.1",
+    "cors": "^2.8.5",
+    "ws": "^8.18.0",
+    "undici": "^6.0.0"
+  }
+}

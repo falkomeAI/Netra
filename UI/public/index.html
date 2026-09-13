@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=320, height=240, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#0d1117" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>NETRA — नेत्र</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<!-- ── Language Welcome Screen (shown on first visit) ── -->
+<div class="lang-welcome" id="langWelcome">
+  <div class="lang-welcome-card">
+    <div class="lang-welcome-logo">न</div>
+    <h1 class="lang-welcome-title">NETRA — नेत्र</h1>
+    <p class="lang-welcome-subtitle">अपनी भाषा चुनें / Choose your language</p>
+
+    <div class="lang-grid" id="langGrid">
+      <button class="lang-tile" data-lang="hi"><span class="lang-tile-script">हिन्दी</span><span class="lang-tile-en">Hindi</span></button>
+      <button class="lang-tile" data-lang="en"><span class="lang-tile-script">English</span><span class="lang-tile-en">English</span></button>
+      <button class="lang-tile" data-lang="ta"><span class="lang-tile-script">தமிழ்</span><span class="lang-tile-en">Tamil</span></button>
+      <button class="lang-tile" data-lang="te"><span class="lang-tile-script">తెలుగు</span><span class="lang-tile-en">Telugu</span></button>
+      <button class="lang-tile" data-lang="bn"><span class="lang-tile-script">বাংলা</span><span class="lang-tile-en">Bengali</span></button>
+      <button class="lang-tile" data-lang="mr"><span class="lang-tile-script">मराठी</span><span class="lang-tile-en">Marathi</span></button>
+      <button class="lang-tile" data-lang="gu"><span class="lang-tile-script">ગુજરાતી</span><span class="lang-tile-en">Gujarati</span></button>
+      <button class="lang-tile" data-lang="kn"><span class="lang-tile-script">ಕನ್ನಡ</span><span class="lang-tile-en">Kannada</span></button>
+      <button class="lang-tile" data-lang="ml"><span class="lang-tile-script">മലയാളം</span><span class="lang-tile-en">Malayalam</span></button>
+      <button class="lang-tile" data-lang="pa"><span class="lang-tile-script">ਪੰਜਾਬੀ</span><span class="lang-tile-en">Punjabi</span></button>
+      <button class="lang-tile" data-lang="or"><span class="lang-tile-script">ଓଡ଼ିଆ</span><span class="lang-tile-en">Odia</span></button>
+      <button class="lang-tile" data-lang="as"><span class="lang-tile-script">অসমীয়া</span><span class="lang-tile-en">Assamese</span></button>
+      <button class="lang-tile" data-lang="ur"><span class="lang-tile-script">اردو</span><span class="lang-tile-en">Urdu</span></button>
+      <button class="lang-tile" data-lang="mai"><span class="lang-tile-script">मैथिली</span><span class="lang-tile-en">Maithili</span></button>
+      <button class="lang-tile" data-lang="ne"><span class="lang-tile-script">नेपाली</span><span class="lang-tile-en">Nepali</span></button>
+      <button class="lang-tile" data-lang="sd"><span class="lang-tile-script">سنڌي</span><span class="lang-tile-en">Sindhi</span></button>
+      <button class="lang-tile" data-lang="sa"><span class="lang-tile-script">संस्कृत</span><span class="lang-tile-en">Sanskrit</span></button>
+      <button class="lang-tile" data-lang="kok"><span class="lang-tile-script">कोंकणी</span><span class="lang-tile-en">Konkani</span></button>
+      <button class="lang-tile" data-lang="doi"><span class="lang-tile-script">डोगरी</span><span class="lang-tile-en">Dogri</span></button>
+      <button class="lang-tile" data-lang="ks"><span class="lang-tile-script">کٲشُر</span><span class="lang-tile-en">Kashmiri</span></button>
+      <button class="lang-tile" data-lang="mni"><span class="lang-tile-script">মৈতৈলোন্</span><span class="lang-tile-en">Manipuri</span></button>
+      <button class="lang-tile" data-lang="sat"><span class="lang-tile-script">ᱥᱟᱱᱛᱟᱲᱤ</span><span class="lang-tile-en">Santali</span></button>
+      <button class="lang-tile" data-lang="brx"><span class="lang-tile-script">बड़ो</span><span class="lang-tile-en">Bodo</span></button>
+    </div>
+  </div>
+</div>
+
+<div class="device-frame hidden" id="mainApp">
+
+  <!-- ── Status Bar ── -->
+  <header class="status-bar">
+    <div class="status-left">
+      <span class="logo">न</span>
+      <span class="brand" id="appTitle">NETRA</span>
+    </div>
+    <div class="status-right">
+      <button class="sos-status-btn" id="btnSOS" title="SOS Emergency">🚨</button>
+      <button class="location-btn" id="btnLocation" title="Set Location">📍</button>
+      <span class="status-dot" id="statusDot"></span>
+      <select class="lang-select" id="uiLang">
+        <option value="hi">हि</option>
+        <option value="en">En</option>
+        <option value="ta">த</option>
+        <option value="te">తె</option>
+        <option value="bn">বা</option>
+        <option value="mr">म</option>
+        <option value="gu">ગુ</option>
+        <option value="kn">ಕ</option>
+        <option value="ml">മ</option>
+        <option value="pa">ਪ</option>
+        <option value="or">ଓ</option>
+        <option value="as">অ</option>
+        <option value="ur">ا</option>
+        <option value="sa">सं</option>
+        <option value="kok">कों</option>
+        <option value="ks">ک</option>
+        <option value="mai">मै</option>
+        <option value="mni">মৈ</option>
+        <option value="ne">ने</option>
+        <option value="sd">سن</option>
+        <option value="doi">डो</option>
+        <option value="brx">ब</option>
+        <option value="sat">ᱥ</option>
+      </select>
+    </div>
+  </header>
+
+  <!-- ── Response Display Area ── -->
+  <main class="display-area" id="displayArea">
+
+    <!-- Idle State -->
+    <div class="state" id="stateIdle">
+      <div class="idle-news-slider" id="idleNewsSlider">
+        <div class="idle-news-viewport">
+          <div class="idle-news-track" id="idleNewsTrack"></div>
+        </div>
+      </div>
+      <p class="idle-hint" id="idleHint">बोलो, फोटो लो या अपलोड करो</p>
+      <div class="lang-badge" id="langBadge">🌐 हिन्दी</div>
+    </div>
+
+    <!-- Listening State -->
+    <div class="state hidden" id="stateListening">
+      <div class="pulse-ring"></div>
+      <div class="listening-icon">🎤</div>
+      <p class="state-label" id="listeningLabel">सुन रहा है...</p>
+      <div class="lang-badge listening" id="listeningLangBadge">🌐 हिन्दी</div>
+      <div class="audio-bars">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <!-- Processing State -->
+    <div class="state hidden" id="stateProcessing">
+      <div class="spinner"></div>
+      <p class="state-label" id="processingLabel">समझ रहा है...</p>
+      <div class="pipeline-dots" id="pipelineDots">
+        <span class="dot" title="ASR">🗣</span>
+        <span class="dot" title="NMT">🔄</span>
+        <span class="dot" title="LLM">🧠</span>
+        <span class="dot" title="TTS">🔊</span>
+      </div>
+    </div>
+
+    <!-- Camera State -->
+    <div class="state hidden" id="stateCamera">
+      <video id="cameraPreview" autoplay playsinline></video>
+      <canvas id="captureCanvas" style="display:none"></canvas>
+      <button class="capture-btn" id="btnCapture">📸</button>
+    </div>
+
+    <!-- Verify Transcript State -->
+    <div class="state hidden" id="stateVerify">
+      <p class="verify-title" id="verifyTitle">आपने कहा:</p>
+      <div class="verify-box">
+        <p class="verify-text" id="verifyText"></p>
+      </div>
+      <div class="verify-actions">
+        <button class="verify-btn confirm" id="btnConfirm">✅</button>
+        <button class="verify-btn edit" id="btnEdit">✏️</button>
+        <button class="verify-btn retry" id="btnRetry">🔄</button>
+      </div>
+      <input type="text" class="verify-edit-input hidden" id="verifyEditInput" />
+    </div>
+
+    <!-- Result State -->
+    <div class="state hidden" id="stateResult">
+      <div class="result-scroll" id="resultScroll">
+        <p class="result-text" id="resultText"></p>
+      </div>
+      <div class="result-actions">
+        <button class="action-sm" id="btnPlayResult">🔊</button>
+        <button class="action-sm" id="btnCopyResult">📋</button>
+        <button class="action-sm" id="btnNewQuery">🔄</button>
+      </div>
+    </div>
+
+    <!-- Inject State -->
+    <div class="state hidden" id="stateInject">
+      <div class="inject-icon">📥</div>
+      <p class="state-label" id="injectLabel">ज्ञान भंडार</p>
+
+      <!-- KB Stats -->
+      <div class="kb-stats" id="kbStats">
+        <span id="kbDocsCount">—</span> <span id="kbDocsLabel">दस्तावेज़</span>
+        <span class="kb-divider">|</span>
+        <span id="kbChunksCount">—</span> <span id="kbChunksLabel">भाग</span>
+        <span class="kb-divider">|</span>
+        <span class="watcher-dot" id="watcherDot"></span>
+        <span id="watcherLabel">स्वतः</span>
+      </div>
+
+      <div class="inject-options">
+        <!-- Single file upload -->
+        <label class="inject-file-btn" id="injectFileBtn">
+          <input type="file" id="injectFileInput" accept="image/*,.pdf,.txt,.doc,.docx" />
+          <span>📄</span> <span id="injectFileText">फ़ाइल चुनो</span>
+        </label>
+
+        <!-- Bulk file upload -->
+        <label class="inject-file-btn bulk" id="injectBulkBtn">
+          <input type="file" id="injectBulkInput" accept="image/*,.pdf,.txt,.doc,.docx" multiple />
+          <span>📚</span> <span id="injectBulkText">कई फ़ाइलें</span>
+        </label>
+
+        <!-- Auto-ingest scan -->
+        <button class="inject-file-btn scan" id="btnScanInbox">
+          <span>🔄</span> <span id="scanInboxText">इनबॉक्स स्कैन</span>
+        </button>
+
+        <div class="inject-status" id="injectStatus"></div>
+      </div>
+
+      <p class="inbox-hint" id="inboxHint">📂 Backend/data/inbox/ में फ़ाइलें डालो — अपने आप जुड़ जाएगा</p>
+
+      <div class="inject-services">
+        <button class="inject-svc-btn" id="btnWeather"><span>🌤</span> <span id="weatherLabel">Weather</span></button>
+        <button class="inject-svc-btn" id="btnMandi"><span>🌾</span> <span id="mandiLabel">Mandi</span></button>
+        <button class="inject-svc-btn" id="btnReminders"><span>📅</span> <span id="remindersLabel">Reminders</span></button>
+      </div>
+    </div>
+
+    <!-- Location State -->
+    <div class="state hidden" id="stateLocation">
+      <div class="location-card">
+        <div class="location-icon">📍</div>
+        <p class="state-label" id="locationTitle">Set Your Location</p>
+        <div class="pincode-input-group">
+          <input type="text" id="pincodeInput" class="pincode-input" placeholder="Enter PIN Code (e.g. 226001)" maxlength="6" pattern="[0-9]{6}" inputmode="numeric" />
+          <button class="pincode-submit" id="btnPincodeSubmit">✓</button>
+        </div>
+        <div class="location-info hidden" id="locationInfo">
+          <p class="location-detected" id="locationDetected"></p>
+          <p class="location-state" id="locationState"></p>
+        </div>
+        <div class="location-schemes hidden" id="locationSchemes">
+          <p class="schemes-title" id="schemesTitle">Schemes for your area:</p>
+          <ul class="schemes-list" id="schemesList"></ul>
+        </div>
+        <div class="location-status" id="locationStatus"></div>
+      </div>
+    </div>
+
+    <!-- SOS Emergency State -->
+    <div class="state hidden" id="stateSOS">
+      <div class="sos-card">
+        <div class="sos-header" id="sosHeader">🚨 Emergency / आपातकाल</div>
+        <div class="sos-grid">
+          <a href="tel:112" class="sos-item police"><span class="sos-icon">🚔</span><span class="sos-name">Police</span><span class="sos-number">112</span></a>
+          <a href="tel:108" class="sos-item ambulance"><span class="sos-icon">🚑</span><span class="sos-name">Ambulance</span><span class="sos-number">108</span></a>
+          <a href="tel:101" class="sos-item fire"><span class="sos-icon">🚒</span><span class="sos-name">Fire</span><span class="sos-number">101</span></a>
+          <a href="tel:1091" class="sos-item women"><span class="sos-icon">👩</span><span class="sos-name">Women</span><span class="sos-number">1091</span></a>
+          <a href="tel:1078" class="sos-item disaster"><span class="sos-icon">🌊</span><span class="sos-name">Disaster</span><span class="sos-number">1078</span></a>
+          <a href="tel:181" class="sos-item child"><span class="sos-icon">👶</span><span class="sos-name">Child</span><span class="sos-number">1098</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Weather State -->
+    <div class="state hidden" id="stateWeather">
+      <div class="weather-card">
+        <div class="weather-header" id="weatherHeader">🌤 Weather Alerts</div>
+        <div class="weather-location" id="weatherLocation">📍 Set location first</div>
+        <div class="weather-alerts" id="weatherAlerts">
+          <div class="weather-loading">Loading...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mandi Prices State -->
+    <div class="state hidden" id="stateMandi">
+      <div class="mandi-card">
+        <div class="mandi-header" id="mandiHeader">🌾 Mandi Prices</div>
+        <div class="mandi-location" id="mandiLocation">📍 Set location first</div>
+        <div class="mandi-list" id="mandiList">
+          <div class="weather-loading">Loading...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scheme Reminders State -->
+    <div class="state hidden" id="stateReminders">
+      <div class="reminders-card">
+        <div class="reminders-header" id="remindersHeader">📅 Scheme Deadlines</div>
+        <div class="reminders-list" id="remindersList"></div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ── Main Control Buttons ── -->
+  <footer class="control-bar">
+    <button class="ctrl-btn voice" id="btnVoice">
+      <span class="ctrl-icon">🎤</span>
+      <span class="ctrl-label" id="voiceLabel">बोलो</span>
+    </button>
+    <button class="ctrl-btn camera" id="btnCamera">
+      <span class="ctrl-icon">📷</span>
+      <span class="ctrl-label" id="cameraLabel">देखो</span>
+    </button>
+    <button class="ctrl-btn upload" id="btnUpload" type="button">
+      <span class="ctrl-icon">📁</span>
+      <span class="ctrl-label" id="uploadLabel">अपलोड</span>
+    </button>
+    <button class="ctrl-btn inject" id="btnInject">
+      <span class="ctrl-icon">📥</span>
+      <span class="ctrl-label" id="injectBtnLabel">डेटा</span>
+    </button>
+  </footer>
+
+</div>
+
+<!-- Hidden elements -->
+<input type="file" id="uploadInput" accept="image/*,.pdf,application/pdf" style="display:none" />
+<audio id="resultAudio" style="display:none"></audio>
+
+<script src="/js/app.js"></script>
+</body>
+</html>

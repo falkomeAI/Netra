@@ -1,0 +1,47 @@
+# NETRA v2 — Core dependencies
+flask>=3.0
+flask-cors>=4.0
+pyyaml>=6.0
+numpy>=1.24
+opencv-python-headless>=4.8
+Pillow>=10.0
+torch>=2.1
+transformers>=4.52
+huggingface-hub>=0.20
+
+# RAG — Embedding & Vector Store
+sentence-transformers>=3.0
+faiss-cpu>=1.8
+
+# Knowledge Graph
+networkx>=3.2
+
+# OCR
+paddleocr>=2.7
+easyocr>=1.7
+# paddlepaddle-gpu>=2.6   # Install separately for Jetson
+
+# ASR
+faster-whisper>=1.0
+nemo_toolkit[asr]>=2.0         # IndicConformer (NeMo-based ASR)
+
+# TTS
+TTS>=0.22
+edge-tts>=6.1
+soundfile>=0.12                # IndicF5 audio output
+
+# Bhashini API
+requests>=2.31
+
+# Quantization
+autoawq>=0.2
+auto-gptq>=0.7
+optimum>=1.17
+
+# PDF Processing
+pdfplumber>=0.10
+reportlab>=4.0
+
+# Dev
+pytest>=8.0
+ruff>=0.4

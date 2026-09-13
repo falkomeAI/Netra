@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# pytest / ruff
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Model weights (too large for git)
+Backend/models/
+Backend/cache/
+
+# Runtime output
+Backend/output/
+Backend/uploads/
+Backend/temp/
+Backend/logs/
+Backend/data/inbox/processed/
+
+# Knowledge base (regenerated via seed script)
+Backend/knowledge_base/vector_store/index.faiss
+Backend/knowledge_base/vector_store/metadata.json
+Backend/knowledge_base/graph/knowledge_graph.json
+
+# Node.js
+UI/node_modules/
+UI/uploads/
+
+# Environment secrets
+.env
+*.env.local
+
+# Cursor IDE
+.cursor/
+
+# Large archives
+*.zip
+
+# Backup files
+*.bak_*
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, public, private, max-age=0" />
+  <meta http-equiv="expires" content="0" />
+  
+  <title>Startup Gujarat</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">   -->
+  <script type="text/javascript">
+    sih_auth_api_key = "GJraXqwVy7TX6XQp";
+    // sih_auth_callback_uri = "https://demostup.orpgujarat.com/account/landingpage";
+    sih_auth_callback_uri = "http://startup.gujarat.gov.in/account/landingpage";
+    
+
+  </script>
+   <script src="./acctoolbar/acctoolbar.min.js"></script>
+   <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+      }
+      </script>
+      
+      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+     
+  <style>
+    #google_translate_element select{
+    background:#04040490;
+    color:#ffffff;
+    border: none;
+    border-radius:3px;
+    padding:6px 8px
+    }
+    
+    /*google translate link | logo */
+      /* .goog-logo-link{
+      display:none!important;
+      }
+    .goog-te-gadget{
+    color:transparent!important;
+    } */
+    
+    /* google translate banner-frame */
+    
+    /* .goog-te-banner-frame{
+    display:none !important;
+    }
+    
+    #goog-gt-tt, .goog-te-balloon-frame{display: none !important;}
+   .goog-text-highlight { background: none !important; box-shadow: none !important;} */
+  </style>
+</head>
+
+<body>
+<div class="container-fluid">
+  <div class="row" style="background-color: rgb(48, 48, 48);">
+   
+<div class="col-md-12 text-right d-flex align-items-center justify-content-end pr-3 mr-0" style="height:40px; top:0px;">
+  <div> <a href="/page/screenreaderaccess" class="text-white text-decoration-none" style="margin-right: 10px;">Screen Reader Access</a> </div>
+  <div  id="google_translate_element" style="margin-right: 16.5%; margin-top: 1.3%;"></div>
+</div>
+</div>
+</div>
+  <app-root>
+    <div style="display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh !important;
+    margin: 0;">
+      <img src="/assets/img/brand/logo-dark.png" style="vertical-align: middle;margin: 0;" />
+    </div>
+  </app-root>
+  <script src="https://use.fontawesome.com/7b2da0b06d.js"></script>
+  <script>
+// optional init
+  window.onload = function() {
+    window.micAccessTool = new MicAccessTool({
+      link: 'http://your-awesome-website.com/your-accessibility-declaration.pdf',
+      contact: 'https://startup.gujarat.gov.in/contact-us',
+      buttonPosition: 'left', // default is 'left'
+      forceLang: 'en' // default is 'en' may be 'he-IL', 'ru-RU', or 'fr_FR'
+    });
+  }
+</script>
+  <!-- <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=4a59ea286ea78b210b3c99ee424a36261814dc52'></script> -->
+          <!-- <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/844917/t/5"></script> -->
+<script src="runtime-es2015.js" type="module"></script><script src="runtime-es5.js" nomodule defer></script><script src="polyfills-es5.js" nomodule defer></script><script src="polyfills-es2015.js" type="module"></script><script src="styles-es2015.js" type="module"></script><script src="styles-es5.js" nomodule defer></script><script src="scripts.js" defer></script><script src="vendor-es2015.js" type="module"></script><script src="vendor-es5.js" nomodule defer></script><script src="main-es2015.js" type="module"></script><script src="main-es5.js" nomodule defer></script></body>
+
+</html>

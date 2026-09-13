@@ -1,0 +1,43 @@
+pipeline:
+  loading_strategy: "sequential"
+
+  stages:
+    - preprocessing
+    - ocr
+    - retrieval
+    - llm
+    - nmt
+    - tts
+
+  optional_stages:
+    - asr
+    - vlm
+    - embedding
+    - knowledge_graph
+
+device:
+  target: "cuda"
+  vram_budget_mb: 6144
+  vram_reserved_mb: 2048
+  cuda_device: 0
+  enable_tensorrt: true
+
+inference:
+  default_batch_size: 1
+  max_input_length: 1024
+  max_output_length: 150
+  default_temperature: 0.3
+  default_top_p: 0.9
+  timeout_seconds: 10
+
+defaults:
+  preprocessing: "opencv"
+  ocr: "paddleocr"
+  embedding: "ollama"
+  retrieval: "ollama"
+  asr: "whisper_small"
+  llm: "ollama_qwen2_5_1_5b"
+  nmt: "ollama_nmt"
+  tts: "piper"
+  vlm: "ollama_vlm"
+  knowledge_graph: "networkx"

@@ -1,0 +1,173 @@
+hardware:
+  boards:
+    sunosutra_devboard:
+      name: "SunoSutra Devboard — VYOMA Challenge Kit"
+      version: "1.0"
+      form_factor: "tabletop"
+      portable: false
+      battery: false
+
+      compute:
+        module: "NVIDIA Jetson Orin Nano 8GB Super Developer Kit"
+        soc: "Tegra Orin"
+        cpu: "6-Core ARM Cortex-A78AE"
+        gpu: "1024 CUDA core Ampere"
+        tops_int8: 67
+        ram_gb: 8
+        ram_type: "LPDDR5"
+        ram_bandwidth_gbps: 102.4
+
+      storage:
+        type: "MicroSD"
+        capacity_gb: 128
+        speed_mbps: 100
+
+      networking:
+        usb_rndis: true
+        wifi: "Dual-Band 2.4/5GHz"
+        bluetooth: "BLE 5.0"
+
+      camera:
+        sensor: "IMX219"
+        resolution_mp: 8
+        interface: "USB UVC"
+        model: "Arducam B029202"
+
+      audio:
+        microphone:
+          sensitivity_db: -67
+          snr_db: 80
+        speaker:
+          power_w: 5
+          model: "Honkyob HK-02 USB"
+
+      display:
+        size_inch: 2.8
+        resolution: "240x320"
+        type: "TFT LCD"
+        touchscreen: "Resistive (XPT2046)"
+        controller: "HX8347D / ST7789 / ILI9341"
+        interface: "SPI"
+
+      input:
+        buttons:
+          - type: "capacitive"
+            model: "TTP223"
+            function: "trigger"
+
+      bom_url: "SunoSutraDevboard/Bill Of Materials - Challenge Kit.csv"
+
+    sunosutra_demo:
+      name: "SunoSutra Demo"
+      version: "1.0"
+      form_factor: "handheld"
+      portable: true
+      battery: true
+
+      compute:
+        module: "NVIDIA Jetson Orin Nano 8GB"
+        carrier: "Seeedstudio ReComputer Mini"
+        soc: "Tegra Orin"
+        cpu: "6-Core ARM Cortex-A78AE"
+        gpu: "1024 CUDA core Ampere"
+        tops_int8: 67
+        ram_gb: 8
+        ram_type: "LPDDR5"
+        ram_bandwidth_gbps: 102.4
+
+      storage:
+        type: "MicroSD"
+        capacity_gb: 128
+        speed_mbps: 100
+
+      networking:
+        usb_rndis: true
+        wifi: "Dual-Band 2.4/5GHz"
+        bluetooth: "BLE 5.0"
+
+      camera:
+        sensor: "IMX219"
+        resolution_mp: 8
+        interface: "USB UVC"
+
+      audio:
+        microphone:
+          sensitivity_db: -67
+          snr_db: 80
+        speaker:
+          power_w: 1
+
+      display:
+        size_inch: 2.8
+        resolution: "240x320"
+        type: "TFT LCD"
+        touchscreen: "Capacitive"
+
+      input:
+        buttons:
+          - type: "momentary"
+            function: "trigger"
+          - type: "momentary"
+            count: 4
+            function: "navigation"
+            backlight: "RGB"
+        haptics:
+          engine: "DRV2506L"
+          motor: "vibration"
+        io_expander:
+          chip: "Raspberry Pi RP2350"
+          cpu: "Dual Core ARM Cortex-M33"
+          flash_mb: 2
+          sram_kb: 520
+
+      power:
+        battery_wh: 20
+        chemistry: "4S1P LiPo"
+        voltage_v: 15.2
+        capacity_mah: 1300
+
+  device_profiles:
+    jetson_orin_nano:
+      target: "cuda"
+      cuda_device: 0
+      vram_budget_mb: 6144
+      vram_reserved_mb: 2048
+      enable_tensorrt: true
+      loading_strategy: "sequential"
+      recommended_models:
+        ocr: "paddleocr"
+        llm: "bitnet_hf"
+        nmt: "nllb_600m"
+        tts: "indicf5"
+        embedding: "bge_small"
+        retrieval: "faiss"
+
+    jetson_orin_nano_low_memory:
+      target: "cuda"
+      cuda_device: 0
+      vram_budget_mb: 4096
+      vram_reserved_mb: 1024
+      enable_tensorrt: true
+      loading_strategy: "sequential"
+      recommended_models:
+        ocr: "easyocr"
+        llm: "qwen2_5_05b"
+        nmt: "nllb_600m"
+        tts: "indic_tts"
+        embedding: "bge_small"
+        retrieval: "faiss"
+
+    cpu_only:
+      target: "cpu"
+      cuda_device: -1
+      vram_budget_mb: 32768
+      vram_reserved_mb: 4096
+      enable_tensorrt: false
+      loading_strategy: "sequential"
+      recommended_models:
+        ocr: "easyocr"
+        llm: "bitnet_hf"
+        nmt: "nllb_600m"
+        tts: "indicf5"
+        embedding: "me5_large"
+        retrieval: "faiss"

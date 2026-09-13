@@ -1,0 +1,20 @@
+NETRA TEST POLICY DOCUMENT
+Scheme: NETRA Rural Skill Support Yojana (NRSSY)
+Document ID: NRSSY-TEST-88421
+
+Eligibility:
+- Resident of rural area aged 18 to 45 years
+- Family annual income below Rs 2,50,000
+- Must have Aadhaar and bank account
+
+Benefits:
+- Skill training stipend of Rs 5,000 per month for 6 months
+- Tool kit grant of Rs 12,000 after course completion
+- Placement assistance through district skill centre
+
+How to apply:
+1. Visit nearest Common Service Center with Aadhaar
+2. Submit Form NRSSY-01
+3. Helpline: 1800-555-8842
+
+Unique token for retrieval tests: zebra-mango-7741

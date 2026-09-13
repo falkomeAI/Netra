@@ -1,0 +1,28 @@
+<html lang="en" translate="no">
+
+<head>
+  <meta charset="utf-8">
+  <title>पोर्टल, राजस्थान सरकार</title>
+
+  <meta name="description" content="The government of Rajasthan is committed to public welfare as well being of its public is the priority of the
+    Government. Jankalyan portal (a Public Welfare Portal) fulfills this ideology of Hon’ble Chief Minister of
+    Rajasthan “जनकल्याण ही प्राथमिकता जनकल्याण ही प्रतिबद्धता”">
+  <meta name="keywords"
+        content="Jankalyan Portal,  Public Welfare Portal, जनकल्याण पोर्टल, Government of Rajasthan,  राजस्थान सरकार, Jaipur, Rajasthan, Portal">
+
+  <!-- <base href="/"> -->
+  <script type='text/javascript'>
+    var base = document.location.pathname.split('/')[1];
+    document.write('<base href="/' + base + '/" />');
+  </script>
+  <meta name="robots" content="notranslate">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" id="appFavicon" type="image/x-icon" href="favicon.ico">
+  <script src="assets/js/jquery.min.js"></script>
+<link rel="stylesheet" href="styles.ad8d35e7cc31a2448949.css"></head>
+
+<body style="text-align: justify;">
+  <app-root></app-root>
+<script src="runtime-es2015.c3d04b5444c84098db61.js" type="module"></script><script src="runtime-es5.c3d04b5444c84098db61.js" nomodule defer></script><script src="polyfills-es5.023b6f7f45e9ec357588.js" nomodule defer></script><script src="polyfills-es2015.495a14908bd0a2dc5248.js" type="module"></script><script src="main-es2015.a6a5aa849ee03c1241d9.js" type="module"></script><script src="main-es5.a6a5aa849ee03c1241d9.js" nomodule defer></script></body>
+
+</html>

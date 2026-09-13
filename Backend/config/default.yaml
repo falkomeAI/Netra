@@ -1,0 +1,87 @@
+pipeline:
+  name: "NETRA"
+  version: "2.0.0"
+  description: "Suno Sutra — Open-Source Edge AI Pipeline for Indian Document Processing"
+
+  stages:
+    - preprocessing
+    - ocr
+    - retrieval
+    - llm
+    - nmt
+    - tts
+
+  optional_stages:
+    - asr
+    - vlm
+    - embedding
+    - knowledge_graph
+
+  loading_strategy: "sequential"  # "sequential" | "concurrent" | "lazy"
+
+device:
+  target: "jetson_orin_nano"
+  vram_budget_mb: 8192
+  vram_reserved_mb: 2048
+  cuda_device: 0
+  enable_tensorrt: true
+  enable_cuda_graphs: false
+  memory_fraction: 0.85
+
+inference:
+  default_batch_size: 1
+  max_input_length: 1024
+  max_output_length: 150
+  default_temperature: 0.3
+  default_top_p: 0.9
+  timeout_seconds: 10
+
+quantization:
+  default_method: "awq"
+  default_bits: 4
+  group_size: 128
+  zero_point: true
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s | %(name)s | %(levelname)s | %(message)s"
+  file: "logs/netra.log"
+  max_bytes: 10485760
+  backup_count: 5
+
+paths:
+  models_dir: "models"
+  cache_dir: "cache"
+  output_dir: "output"
+  temp_dir: "temp"
+  logs_dir: "logs"
+  knowledge_base_dir: "knowledge_base"
+  watch_dir: "data/inbox"
+
+languages:
+  supported:
+    - hi    # Hindi
+    - bn    # Bengali
+    - te    # Telugu
+    - mr    # Marathi
+    - ta    # Tamil
+    - gu    # Gujarati
+    - ur    # Urdu
+    - kn    # Kannada
+    - or    # Odia
+    - ml    # Malayalam
+    - pa    # Punjabi
+    - as    # Assamese
+    - mai   # Maithili
+    - sa    # Sanskrit
+    - kok   # Konkani
+    - ne    # Nepali
+    - sd    # Sindhi
+    - doi   # Dogri
+    - mni   # Manipuri
+    - brx   # Bodo
+    - sat   # Santali
+    - ks    # Kashmiri
+    - en    # English
+  default_source: "en"
+  default_target: "hi"
