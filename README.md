@@ -1090,7 +1090,6 @@ Same Jetson module on [Seeedstudio ReComputer Mini](https://www.seeedstudio.com/
 
 | Resource | URL |
 |---|---|
-| **NETRA v2 GitHub** | [github.com/Gaurav14cs17/NETRA-v2](https://github.com/Gaurav14cs17/NETRA-v2) |
 | **VYOMA Innovation Challenge** | [bhashini.gov.in/sahyogi/hackathon/open-handheld-ai](https://bhashini.gov.in/sahyogi/hackathon/open-handheld-ai) |
 | **VYOMA Round 1 Results (Shortlisted)** | [bhashini.gov.in/.../shortlisted](https://bhashini.gov.in/sahyogi/hackathon/open-handheld-ai/shortlisted) |
 | **Bhashini API (MeitY)** | [bhashini.gov.in](https://bhashini.gov.in) |
