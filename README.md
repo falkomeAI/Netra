@@ -182,8 +182,8 @@ node server.js                      # starts on port 3000
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/Gaurav14cs17/NETRA-v2.git
-cd NETRA-v2
+git clone https://github.com/falkomeAI/Netra
+cd Netra
 ```
 
 ### Step 2: Set Up the Backend
